@@ -10,8 +10,41 @@
     <script src='src/main.js'></script>
 </head>
 <body onLoad="start()">
-    <div id="view" style="width: 1280px; height:720px; background-color: #233535;"></div>
-    <button onclick="renderImage()" type="button">Render to image</button>
+    <h1>Lewd skilltree</h1>
+    <h3 style="color: red;">Work in really slow progress!</h3>
+    <p style="width: 720px; margin-left: 20px;">
+        I like ERP (erotic roleplay), video games and also some programming. 
+        I've played around with the idea of sex based skilltree, but haven't seen any around, so I decided to try and make one myself.
+        Main idea is to unlock these in order. It's really free form without any point costs or serious guide on how to use it. 
+        Just use it however you want 😊<br><br>
+        If you have suggestions on what I should add, you can try to contact me on <a href="https://www.f-list.net/c/dirty%20laurette">my F-list</a> for now.
+    </p>
+    <table style="margin: 20px;">
+        <tr>
+            <th colspan="2">Controls</th>
+        </tr>
+        <tr>
+            <td>Left mouses button drag on background</td>
+            <td>move around in skilltree</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Mouse scroll wheel</td>
+            <td>zoom in and out</td>
+        </tr>
+        <tr>
+            <td>Left mouse button drag on node</td>
+            <td>move node around</td>
+        </tr>
+        <tr>
+            <td>Ctrl + left mouse button</td>
+            <td>select multiple node for moving around</td>
+        </tr>
+    </table>
+    <span style="font-size: larger; font-weight: bold; margin-left: 50px">Select a skilltree: </span>
+    <select id="skilltreeOptions"></select>
+    <select id="orientationOptions"></select>
+    <div id="view" style="width: 1280px; height:720px; background-color: #233535; margin: 20px; margin-left: 50px"></div>
+    <button onclick="renderImage()" type="button" style="margin-left: 50px;">Render to image</button>
     <img id="renderResult"/>
 </body>
 </html>

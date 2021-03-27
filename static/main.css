@@ -1,4 +1,49 @@
 body {
     background-color: rgb(37, 37, 37);
     color: pink;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+body::selection {
+    background-color: #dda9ff;
+    color: rgb(41, 15, 51);
+}
+
+button {
+    background-color: #e62f28;
+    color: white;
+    border: none;
+    transition-duration: 0.1s;
+    padding: 20px;
+    font-size: large;
+}
+
+button:hover {
+    background-color: #dda9ff;
+    color: rgb(41, 15, 51);
+}
+
+button:active {
+    background-color: #9161ff;
+    color: rgb(41, 15, 51);
+}
+
+select {
+    background-color: #e62f28;
+    color: white;
+    border: none;
+    transition-duration: 0.1s;
+    padding: 20px;
+    font-size: large;
+}
+
+select:hover {
+    background-color: #dda9ff;
+    color: rgb(41, 15, 51);
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+  }

@@ -28,7 +28,6 @@ function start() {
             $(go.Shape,
                 { strokeWidth: 5, stroke: "#E62C27" }));
 
-    let model = $(go.TreeModel);
     let analSkillTree = [
         { key: "anal_1", name: "Anal 1", source: "static/icons/anal/anal_1.jpg", description: "Unlocks after first anal experience." },
 
@@ -91,9 +90,36 @@ function start() {
         
         { key: "cumming_horns", parent: "sensitive_horns", name: "Cumming horns", source: "static/icons/oral/cumming_horns.jpg", description: "Horns can indicate orgasm or buildup to it. Varies from person to person. Glowing, sweating or shooting some liquid out from the tip." },
     ];
-    model.nodeDataArray = oralSkillTree;
+    let skillTrees = { "Anal skilltree": analSkillTree, "Oral skilltree": oralSkillTree };
+    let model = $(go.TreeModel);
+    model.nodeDataArray = analSkillTree;
     diagram.model = model;
     window.diagram = diagram;
+
+    let skilltreeOptions = document.getElementById("skilltreeOptions");
+    Object.keys(skillTrees).sort().forEach(key => {
+        let option = document.createElement("option");
+        option.value = key;
+        option.text = key;
+        skilltreeOptions.add(option);
+    });
+    skilltreeOptions.onchange = (event) => {
+        console.log(event.target.value);
+        model.nodeDataArray = skillTrees[event.target.value];
+        // mainChart.update();
+    };
+
+    let orientationOptions = document.getElementById("orientationOptions");
+    ["Left -> right", "Top -> down"].forEach((key, index) => {
+        let option = document.createElement("option");
+        option.value = index;
+        option.text = key;
+        orientationOptions.add(option);
+    });
+    orientationOptions.onchange = (event) => {
+        diagram.layout.angle = event.target.value * 90;
+    };
+    orientationOptions.selectedIndex = 1
 }
 
 function renderImage() {
